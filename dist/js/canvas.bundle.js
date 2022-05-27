@@ -124,7 +124,8 @@ addEventListener("resize", function () {
   canvas.width = innerWidth;
   canvas.height = innerHeight;
   init();
-}); // Objects
+});
+addEventListener('click', init); // Objects
 
 var Ball = /*#__PURE__*/function () {
   function Ball(x, y, dy, dx, radius, color) {
@@ -176,10 +177,11 @@ var Ball = /*#__PURE__*/function () {
 }(); // Implementation
 
 
-var ballArray = [];
-var ball;
+var ballArray;
 
 function init() {
+  ballArray = [];
+
   for (var i = 0; i < 400; i++) {
     var radius = _utils__WEBPACK_IMPORTED_MODULE_0___default.a.randomIntFromRange(10, 30);
     var color = _utils__WEBPACK_IMPORTED_MODULE_0___default.a.randomColor(colors);

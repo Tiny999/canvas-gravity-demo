@@ -29,6 +29,8 @@ addEventListener("resize", () => {
   init();
 });
 
+addEventListener('click', init)
+
 // Objects
 class Ball {
   constructor(x, y, dy, dx, radius, color) {
@@ -77,9 +79,9 @@ class Ball {
 }
 
 // Implementation
-const ballArray = [];
-let ball;
+let ballArray;
 function init() {
+  ballArray = []
   for (let i = 0; i < 400; i++) {
     const radius = utils.randomIntFromRange(10, 30);
     const color = utils.randomColor(colors)
